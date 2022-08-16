@@ -1,0 +1,13 @@
+* {
+    background-color: whitesmoke;
+}
+
+ul {
+    font-size: small;
+    width: 150px;
+}
+
+.content {
+    display: flex;
+}
+
