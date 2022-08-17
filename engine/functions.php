@@ -1,10 +1,11 @@
 <?php
 
-function render($page, $params = [], $layout = 'main')
+function render($page, $params = [], $layout = 'main' )
 {
     return renderTemplate(LAYOUTS_DIR . $layout, [
         'title' => $params['title'],
-//        'images' => $params['images'],
+        'images' => $params['images'] ?? '',
+        'message' => $params['message'] ?? '',
         'menu' => renderTemplate('menu', $params),
         'content' => renderTemplate($page, $params)
     ]);

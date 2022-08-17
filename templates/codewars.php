@@ -1,6 +1,6 @@
 <?php
 
-var_dump($_SERVER);
+var_dump($_SERVER['DOCUMENT_ROOT']);
 
 //function stockList($listOfArt, $listOfCat)
 //{

@@ -18,32 +18,28 @@
 
 <main class="content">
     <nav> <?= $menu ?></nav>
+
+
+
     <div>
-        <?php if (isset($message)) :?>
-            <?= $message . "<br>"?>
-        <?php endif; ?>
+        <?= $message ?>
         <form method="POST" enctype="multipart/form-data">
             <input name="myFile" type="file">
             <button type="submit" value="Загрузить">Загрузить</button>
         </form>
-        <!--    <div class="gallery">-->
-        <!--        --><?php //foreach ($images as $val) : ?>
-        <!--            <img style="width:150px ;" src="--><?//= IMAGES_DIR . $val ?><!-- " alt="--><?//= $val ?><!--">-->
-        <!--        --><?php //endforeach; ?>
-        <!--    </div>-->
+
+<!--            <div class="gallery">-->
+<!--                --><?php //foreach ($images as $val) : ?>
+<!--                    <img style="width:150px ;" src="--><?//= IMAGES_DIR . $val ?><!-- " alt="--><?//= $val ?><!--">-->
+<!--                --><?php //endforeach; ?>
+<!--            </div>-->
 
 
         <div class="slider">
             <div class="slider__container">
                 <div class="slider__wrapper">
                     <div class="slider__items">
-                        <?php foreach ($images as $val) : ?>
-                            <div class="slider__item">
-                                <img style="width:150px ;" src="<?= IMAGES_DIR . $val ?> " alt="<?= $val ?>">
-                            </div>
-                        <?php endforeach; ?>
-
-
+                        <?= $content ?>
                     </div>
                 </div>
             </div>
@@ -58,6 +54,9 @@
         });
     </script>
 </main>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script defer src="../../js/slider.js"></script>

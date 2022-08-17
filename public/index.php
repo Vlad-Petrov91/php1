@@ -3,14 +3,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include "../config/config.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/../config/config.php";
 
-
-$page = 'index';
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-}
-
+$page = $_GET['page'] ?? 'index';
 
 $layout = 'main';
 $params = [];
@@ -32,9 +27,18 @@ switch ($page) {
 
         break;
     case 'gallery':
+        if(!empty($_FILES)){
+            loadImage();
+        }
+        if (!empty($_GET['status'])) {
+            $params['message'] = $messages[$_GET['status']];
+        }
+
+       // $params['message'] = $messages[$_GET['status']];
         $params['title'] = "Галерея";
-//        $layout = 'gallery';
-        $params['images'] = getGallery();
+        $layout = 'gallery';
+        $params['images'] = getGallery(IMAGES_DIR);
+
         break;
 
     default:
